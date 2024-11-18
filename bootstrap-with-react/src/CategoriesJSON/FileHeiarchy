@@ -1,0 +1,75 @@
+ProductImages/
+├── Multímetros/
+│   ├── Multímetros Analógicos/
+│   └── Multímetros Digitais/
+├── Alicates/
+│   ├── Alicate Analógico/
+│   ├── Alicates Digitais Compactos/
+│   ├── Alicates Digitais/
+│   ├── Alicates Wattímetros/
+│   └── Alicates para Painel Solar/
+├── Ferramentas Elétricas/
+│   ├── Detector de Alta Tensão/
+│   ├── Detectores de Tensão/
+│   ├── Fasímetros/
+│   ├── Megômetros/
+│   ├── Multímetro Megômetro/
+│   ├── Terrômetros/
+│   ├── Alicate Terrômetro/
+│   ├── Autotransformadores/
+│   └── Caneta Multímetro/
+├── Temperatura e Ambiente/
+│   ├── Termômetros/
+│   ├── Termômetro de Vareta/
+│   ├── Data Logger de Temperatura e Umidade/
+│   ├── Termo-higrômetros/
+│   ├── Termômetros Infravermelhos/
+│   ├── Anemômetros/
+│   ├── Luxímetros/
+│   ├── Decibelímetros/
+│   ├── Sensor Wi-Fi/
+│   └── Termovisora/
+├── Analisadores de Energia/
+├── Construção Civil/
+│   ├── Trenas a Laser/ 
+│   ├── Medidor de Ângulo a Laser/
+│   └── Nível a Laser/
+├── Linha Automotiva/
+│   ├── Osciloscópio Automotivo/
+│   ├── Testador de Bateria/
+│   └── Multímetros Automotivos/
+├── Instrumentos de Bancada/
+│   ├── Fontes de Alimentação/
+│   ├── Geradores de Função/
+│   ├── Multímetros de Bancada/
+│   └── Frequencímetro/
+├── Linha Industrial/
+├── Diversos/
+│   ├── Capacímetro/
+│   ├── Medidor LCR/
+│   ├── Ponte LCR Portátil/
+│   ├── Tacômetros/
+│   ├── Medidores de Espessura/
+│   ├── Medidor de Umidade de Madeira/
+│   ├── Medidor de Umidade de Grão/
+│   ├── Boroscópios/
+│   ├── Medidor de Vibração/
+│   ├── Identificador de Cabos/
+│   ├── Protoboards/
+│   ├── Detector de gás combustível/
+│   ├── Detector de gás refrigerante/
+│   ├── Medidor de Umidade de Solo/
+│   └── Durômetro/
+├── Acessórios/
+│   ├── Pontas de Osciloscópio/
+│   ├── Ponta de Alta Tensão/
+│   ├── Termopares Tipo K/
+│   ├── Adaptadores/
+│   ├── Pontas de Prova/
+│   ├── Cabos de Conexão/
+│   ├── Cabos Modulares/
+│   └── Garras de Corrente/
+├── Linha Educacional/
+│   ├── Kits Educacionais/
+│   └── Robótica/
+└── Impressoras 3D/

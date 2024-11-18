@@ -1,0 +1,21 @@
+#Menu{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    display: flex;
+}
+.mega-menu {
+    position: fixed; /* Permite que o menu seja posicionado em relação ao próximo elemento posicionado */
+    left: 0;
+    right: 0;
+    background-color: white; /* Cor de fundo do Mega Menu */
+    z-index: 1000; /* Assegura que o Mega Menu fique acima de outros elementos */
+    padding: 20px 0; /* Espaçamento interno */
+    border: 1px solid #ddd; /* Opcional: borda para o Mega Menu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: sombra para destacar o menu */
+  }

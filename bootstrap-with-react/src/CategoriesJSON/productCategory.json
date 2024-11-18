@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "name": "Multímetros",
+    "description": "Detailed information about Multímetros.",
+    "image": "path_to_multimetros_image.jpg",
+    "subcategories": [
+      {
+        "id": 101,
+        "name": "Multímetros Digitais",
+        "description": "Detailed information about Multímetros Digitais.",
+        "image": "path_to_multimetros_digitais_image.jpg"
+      },
+      {
+        "id": 102,
+        "name": "Multímetros Analógicos",
+        "description": "Detailed information about Multímetros Analógicos.",
+        "image": "path_to_multimetros_analogicos_image.jpg"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Alicates",
+    "description": "Detailed information about Alicates.",
+    "image": "path_to_alicates_image.jpg",
+    "subcategories": [
+      {
+        "id": 201,
+        "name": "Alicates de Corte",
+        "description": "Detailed information about Alicates de Corte.",
+        "image": "path_to_alicates_de_corte_image.jpg"
+      },
+      {
+        "id": 202,
+        "name": "Alicates de Bico",
+        "description": "Detailed information about Alicates de Bico.",
+        "image": "path_to_alicates_de_bico_image.jpg"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Ferramentas Elétricas",
+    "description": "Detailed information about Ferramentas Elétricas.",
+    "image": "path_to_ferramentas_eletricas_image.jpg",
+    "subcategories": [
+      {
+        "id": 301,
+        "name": "Furadeiras",
+        "description": "Detailed information about Furadeiras.",
+        "image": "path_to_furadeiras_image.jpg"
+      },
+      {
+        "id": 302,
+        "name": "Parafusadeiras",
+        "description": "Detailed information about Parafusadeiras.",
+        "image": "path_to_parafusadeiras_image.jpg"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Temperatura e Ambiente",
+    "description": "Detailed information about Temperatura e Ambiente.",
+    "image": "path_to_temperatura_ambiente_image.jpg",
+    "subcategories": [
+      {
+        "id": 401,
+        "name": "Termômetros",
+        "description": "Detailed information about Termômetros.",
+        "image": "path_to_termometros_image.jpg"
+      },
+      {
+        "id": 402,
+        "name": "Higrômetros",
+        "description": "Detailed information about Higrômetros.",
+        "image": "path_to_higrometros_image.jpg"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Analisadores de Energia",
+    "description": "Detailed information about Analisadores de Energia.",
+    "image": "path_to_analisadores_energia_image.jpg",
+    "subcategories": [
+      {
+        "id": 501,
+        "name": "Analisadores de Qualidade de Energia",
+        "description": "Detailed information about Analisadores de Qualidade de Energia.",
+        "image": "path_to_analisadores_qualidade_energia_image.jpg"
+      },
+      {
+        "id": 502,
+        "name": "Analisadores de Consumo",
+        "description": "Detailed information about Analisadores de Consumo.",
+        "image": "path_to_analisadores_consumo_image.jpg"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Construção Civil",
+    "description": "Detailed information about Construção Civil.",
+    "image": "path_to_construcao_civil_image.jpg",
+    "subcategories": [
+      {
+        "id": 601,
+        "name": "Níveis a Laser",
+        "description": "Detailed information about Níveis a Laser.",
+        "image": "path_to_niveis_laser_image.jpg"
+      },
+      {
+        "id": 602,
+        "name": "Medidores de Distância",
+        "description": "Detailed information about Medidores de Distância.",
+        "image": "path_to_medidores_distancia_image.jpg"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Linha Automotiva",
+    "description": "Detailed information about Linha Automotiva.",
+    "image": "path_to_linha_automotiva_image.jpg",
+    "subcategories": [
+      {
+        "id": 701,
+        "name": "Scanners Automotivos",
+        "description": "Detailed information about Scanners Automotivos.",
+        "image": "path_to_scanners_automotivos_image.jpg"
+      },
+      {
+        "id": 702,
+        "name": "Testadores de Bateria",
+        "description": "Detailed information about Testadores de Bateria.",
+        "image": "path_to_testadores_bateria_image.jpg"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Instrumentos de Bancada",
+    "description": "Detailed information about Instrumentos de Bancada.",
+    "image": "path_to_instrumentos_bancada_image.jpg",
+    "subcategories": [
+      {
+        "id": 801,
+        "name": "Fontes de Alimentação",
+        "description": "Detailed information about Fontes de Alimentação.",
+        "image": "path_to_fontes_alimentacao_image.jpg"
+      },
+      {
+        "id": 802,
+        "name": "Geradores de Sinal",
+        "description": "Detailed information about Geradores de Sinal.",
+        "image": "path_to_geradores_sinal_image.jpg"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Linha Industrial",
+    "description": "Detailed information about Linha Industrial.",
+    "image": "path_to_linha_industrial_image.jpg",
+    "subcategories": [
+      {
+        "id": 901,
+        "name": "Multímetros Industriais",
+        "description": "Detailed information about Multímetros Industriais.",
+        "image": "path_to_multimetros_industriais_image.jpg"
+      },
+      {
+        "id": 902,
+        "name": "Testadores de Isolamento",
+        "description": "Detailed information about Testadores de Isolamento.",
+        "image": "path_to_testadores_isolamento_image.jpg"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Linha Smart",
+    "description": "Detailed information about Linha Smart.",
+    "image": "path_to_linha_smart_image.jpg",
+    "subcategories": [
+      {
+        "id": 1001,
+        "name": "Dispositivos IoT",
+        "description": "Detailed information about Dispositivos IoT.",
+        "image": "path_to_dispositivos_iot_image.jpg"
+      },
+      {
+        "id": 1002,
+        "name": "Sensores Inteligentes",
+        "description": "Detailed information about Sensores Inteligentes.",
+        "image": "path_to_sensores_inteligentes_image.jpg"
+      }
+    ]
+  }
+]

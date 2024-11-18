@@ -1,0 +1,649 @@
+/* =========================
+   Font Import
+   ========================= */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+.dm-sans {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+/* =========================
+   Global Styles
+   ========================= */
+   body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "DM Sans" , sans-serif;
+  }
+  
+  .content {
+    flex: 1 0 auto;
+  }
+  
+  footer.main-background {
+    flex-shrink: 0;
+    width: 100%;
+  }
+  
+  footer .row {
+    margin: 0;
+  }
+  
+  footer .row.align-items-center {
+    align-items: center;
+  }
+  
+  /* =========================
+     Navbar Styles
+     ========================= */
+  /* Top Navbar */
+  .top-navbar {
+    background:rgb(34, 135, 206,); /* Dark blue background */
+    color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s;
+    top: 0;
+    font-size: 1.6dvh;
+  }
+  
+  .top-navbar.hidden {
+    top: -50px;
+  }
+  
+  /* Main Navbar */
+  .main-navbar {
+    background: rgb(255, 255, 255); /* White background */
+    color: rgb(0, 0, 0); /* Black text */
+    position: fixed;
+    font-size: 1.3ch;
+    width: 100%;
+    top: 40px;
+    z-index: 999;
+    transition: top 0.3s;
+  }
+  
+  .main-navbar.top {
+    top: 0;
+  }
+  
+  
+  .nav-link {
+    color: white; /* White link color */
+  }
+  
+  .nav-link:hover {
+    color: rgb(35, 136, 199); /* Sky Blue on hover */
+  }
+  
+  /* Navbar Brand */
+  .navbar-brand {
+    display: flex;
+    margin-left: 20dvh;
+  }
+  
+  .navbar-brand img {
+    height: 90px;
+    width: 100px;
+  }
+  
+  /* =========================
+     Dropdown Menu Styles
+     ========================= */
+  .dropdown-custom .dropdown-menu {
+    display: none; /* Hidden by default */
+    background-color: white; /* White background */
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin: 0;
+    width: 230px;
+  }
+  
+  .dropdown-custom:hover .dropdown-menu {
+    display: block; /* Show on hover */
+  }
+  
+  .dropdown-custom .dropdown-item {
+    padding: 12px 20px;
+    color: black; 
+    font-size: 0.875rem;
+    text-align: center;
+  }
+  
+  .dropdown-custom .dropdown-item:hover,
+  .dropdown-custom .dropdown-item:focus {
+    color:  blue  ; 
+  }
+  
+  .dropdown-custom .dropdown-item.active {
+    color:black; /* White text */
+  }
+  
+  .dropdown-custom .dropdown-toggle::after {
+    display: none; /* Hide the default dropdown arrow */
+  }
+
+
+  /* =========================
+     Mega Menu Styles
+     ========================= */
+  .mega-menu .subcategory-nav {
+    display: none;
+    position: fixed;
+    background-color: rgb(255, 255, 255); /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .mega-menu .category-column:hover .subcategory-nav {
+    display: inline-block;
+    opacity: 1;
+    transition-delay: 0.5s;
+  }
+  
+  .mega-menu .category-column {
+    position: relative;
+  }
+  
+  .mega-menu .category-column:hover {
+    color: rgb(0,34,102); /* Dark blue text */
+  }
+  
+  .mega-menu .subcategory-nav a {
+    color: rgb(0, 0, 0); /* Black text */
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .mega-menu .subcategory-nav a:hover {
+    color: blue; /* Blue text on hover */
+  }
+  
+  .mega-menu-container::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /* =========================
+     Main Content Styles
+     ========================= */
+  .main-content {
+    margin-top: 170px;
+  }
+  
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 120px;
+  }
+  
+  /* =========================
+     Landing Page Styles
+     ========================= */
+  .landing-page-container {
+    background-color: #00008B; /* Dark blue background */
+  }
+  
+  .background-card {
+    background-color: rgb(243, 242, 242) !important; /* Light gray background */
+  }
+
+  .carousel-control-next-icon, .carousel-control-prev-icon{
+    width: 4rem;
+    height: 7rem;
+    filter: invert(100%);
+  
+  }
+
+  /* =========================
+     LandingPage Card-Products
+     ========================= */
+#line:hover{
+  color: #007bff;
+}
+/* =========================
+     LandingPage News
+     ========================= */
+#News{
+  display: flex;
+  justify-content: center;
+}
+  /* =========================
+     Product Card Styles
+     ========================= */
+  .product-card {
+    background-color: #f9f9f9; /* Light gray background */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 370px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+  }
+  
+  .product-card img {
+    border-radius: 8px 8px 0 0; /* Rounded top corners for the image */
+    height: 300px;
+    width: 200px;
+    object-fit: cover;
+  }
+  
+  .product-card-body {
+    padding: 16px;
+    text-align: center;
+    width: 110px;
+  }
+  
+  .product-card-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    width: 170px;
+  }
+  
+  /* =========================
+     Footer Styles
+     ========================= */
+  footer.main-background {
+    background: rgb(34, 135, 206,); /* Dark blue background */
+    margin-bottom: 0px;
+  }
+  
+  /* Ensuring footer stays at the bottom */
+  html, body {
+    height: 100%;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content {
+    flex: 1;
+  }
+  
+  footer {
+    flex-shrink: 0;
+  }
+  
+  /* =========================
+     Subcategory Description Styles
+     ========================= */
+  .subcategory-descriptions {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1.5rem;
+  }
+  
+  .subcategory-description {
+    flex: 1;
+    padding: 1rem;
+    border-right: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .subcategory-description:last-child {
+    border-right: none;
+  }
+  
+  .category-title2 {
+    color: #007bff; 
+    cursor: pointer;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .subcategory-link {
+    font-size: 0.75rem; /* Smaller font size for subcategories */
+  }
+  
+  /* =========================
+     Zoom Effect Styles
+     ========================= */
+  .zoom-effect-container {
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .zoom-effect-container img {
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+  }
+  
+  .zoom-effect-container:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* =========================
+     Full-screen Logo Section Styles
+     ========================= */
+  .fullscreen-logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh; /* Full screen height */
+    background: rgb(0,43,128);
+    background: linear-gradient(180deg, rgba(0,43,128,1) 0%, rgba(0,83,181,1) 100%);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .fullscreen-logo-section img {
+    width: 150px; /* Adjust as needed */
+    margin-right: 20px;
+  }
+  
+  .fullscreen-logo-section h1 {
+    font-size: 48px; /* Adjust as needed */
+    font-family: 'Cursive', sans-serif;
+    font-weight: bold;
+  }
+  
+  .fullscreen-logo-section p {
+    font-size: 24px; /* Adjust as needed */
+    font-family: 'Cursive', sans-serif;
+  }
+  
+  /* =========================
+     Category Title Styles
+     ========================= */
+  .category-title {
+    text-align: center;
+    color: #00008B; /* Dark blue text */
+    margin-bottom: 40px;
+  }
+  
+  .category-box {
+    width: 100%;
+    top: 40px;
+    background-color: white;
+  }
+  
+  .nav-text {
+    text-align: center;
+    color: #00008B; /* Dark blue text */
+  }
+  
+  /* =========================
+     Category Style Colors
+     ========================= */
+  .bg-red{
+    background-color: #D23333;
+  }
+
+  .bg-offWhite{
+   background-color: #e3e2e2;
+  }
+
+  .bg-blue{
+    background-color: #006DB2;
+  }
+
+  .bg-background{
+    background-image: url(https://via.placeholder.com);
+  }
+
+/* =========================
+     NavAss
+     ========================= */
+.bg-img{
+  background-image: url(https://via.placeholder.com);
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+
+ /* =========================
+     Time-line
+     ========================= */
+
+     .horizontal-timeline .items {
+      border-top: 3px solid #e9ecef;
+      display: flex;
+      justify-content: space-around;
+    }
+    
+    .horizontal-timeline .items .items-list {
+      display: block;
+      position: relative;
+      text-align: center;
+      padding-top: 70px;
+      margin-right: 0;
+    }
+    
+    .horizontal-timeline .items .items-list:before {
+      content: "";
+      position: absolute;
+      height: 36px;
+      border-right: 2px dashed #dee2e6;
+      top: 0;
+    }
+    
+    .horizontal-timeline .items .items-list .event-date {
+      position: absolute;
+      top: 36px;
+      left: 0;
+      right: 0;
+      width: 75px;
+      margin: 0 auto;
+      font-size: 0.9rem;
+      padding-top: 8px;
+    
+    }
+
+
+/* =========================
+     Responsive
+     ========================= */
+     @media (max-width: 180px) { 
+
+      .container {
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column;
+      }
+    
+      .Tabs{
+
+        width: 20%;
+        font-size:medium;
+        overflow-wrap: normal;
+      }
+  
+
+     #line{
+      height: 19vh;
+      margin: 2%;
+    display: flex;
+    justify-content: center;
+
+      img{
+        margin: auto;
+      }
+      .Card.Title{
+        font-size: 0.50rem;
+      }
+    
+      .card-title{
+        font-size: 1.3dvh;
+        overflow-wrap: normal;
+        display: flex;
+        justify-content: center;
+        margin: 1%;
+      }
+    
+    }
+  }
+
+  @media (max-width: 480px) { 
+  
+    .container {
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+    }
+
+#mainImage{
+  max-width: 8rem;
+  max-height: 4rem;
+  display: flex;
+  justify-content: center;
+}    
+
+.table{
+  width: 40%;
+}
+
+
+    #line{
+      height: 25dvh;
+
+      .card-title{
+        font-size: 1.5dvh;
+        overflow-wrap: normal;
+        display: flex;
+        justify-content: center;
+        margin: 1%;
+      }
+    }
+  
+
+  }
+
+  @media screen and (min-width: 1224px) {
+
+    #astec {
+
+      height: 30vh;
+      font-size: 1.7dvh;
+      border: 0cap;
+      width: 40dvh;
+      display: flex;
+      flex-wrap: nowrap !important; 
+
+  }
+
+  .Tabs{
+
+    width: 20%;
+    font-size:medium;
+    overflow-wrap: normal;
+  }
+
+
+  }
+
+  @media (max-width: 780px) { 
+  
+    .container {
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    #mainImage{
+      max-width: 8rem;
+      max-height: 6rem;
+    }    
+
+
+    .Tab{
+
+      width: 20%;
+      font-size:medium;
+      overflow-wrap: normal;
+    }
+
+
+  }
+
+
+  @media (max-width: 1945px) {
+  
+
+    #line{
+      height: 20dvh;
+
+
+      .card-title{
+        font-size: small;
+        overflow-wrap: normal;
+        display: flex;
+        justify-content: center;
+        margin: 1%;
+      }
+
+    }
+
+
+    .Tab{
+
+      width: 20%;
+      font-size:medium;
+    }
+
+    .subcategory-description {
+      
+      font-size: smaller;
+      overflow-wrap: normal;
+    }
+
+  } 
+
+  
+    /* =========================
+     Tabs
+     ========================= */
+   #justify-tab-example-tab-Title , #justify-tab-example-tab-Comparativo,#justify-tab-example-tab-Software,#justify-tab-example-tab-Proposta{
+    background-color: #006DB2;
+      overflow-wrap: normal;
+      font-size: small;
+ 
+
+   }
+   
+   .Tab{
+    height: auto;
+    font-size: small;
+  }
+
+  #justify-tab-example-tabpane-Title{
+    margin: 0%;
+  }
+
+  // https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Farrow-point-to-right_32213&psig=AOvVaw2HeqFfNQ9djyXkoMh281g0&ust=1727203582171000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLCutsvd2YgDFQAAAAAdAAAAABAE
+
+.accordion-button{
+color: #084f7b;
+}
+
+
+.col-12 {
+  display: flex;
+  justify-content: center;
+}

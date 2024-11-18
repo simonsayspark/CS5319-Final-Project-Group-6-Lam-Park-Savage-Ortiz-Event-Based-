@@ -1,0 +1,323 @@
+// Mongo Ligação
+
+APP.js
+
+import express from 'express';
+import conectaNaDb from './config/dbConnect.js';
+import routes from './routes/index.js';
+
+const conexao = await conectaNaDb();
+// Abaixo está sendo feita a conexão com o MongoDB. O método connect recebe a URL de conexão com o banco de dados. O método retorna uma Promise, que é aguardada com o await.
+conexao.on('error', (erro) => { 
+    console.error('Erro ao conectar no MongoDB', erro);
+});
+// Abaixo está sendo feito um tratamento de erro para o evento de erro da conexão. O método on recebe o nome do evento e uma função de callback que será executada quando o evento ocorrer.
+conexao.once('open', () => {
+    console.log('Conectado no MongoDB');
+});
+
+const app = express();
+routes(app);
+
+
+export default app;
+
+
+
+import mongoose from "mongoose"; //Adicionar import
+
+export default async function conectNaDB(){
+    mongoose.connect("mongodb+srv:(Usuario e senha))@cluster1.yeaig.mongodb.net/spotify?retryWrites=true&w=majority&appName=Cluster1") 
+
+    return mongoose.connection;
+}
+
+// Passos Para a instalação 
+
+// 1° Criar o banco com Mongo 
+
+// 2° Linkar com o formulário 
+
+
+// Passos Para a linkar formulário
+
+
+// Link Banco de dados 
+
+mongodb+srv://Arisu:<db_password>@banco.wrd3e.mongodb.net/?retryWrites=true&w=majority&appName=Banco
+
+https://json-server-vercel-tan-rho.vercel.app/categories
+
+
+
+
+@media (max-width: 360px) { 
+
+    h2{
+      font-size: 3dvh;
+    }
+
+    .container {
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+#mainImage{
+  max-width: 10rem;
+  max-height: 8rem;
+}    
+
+.table{
+  width: 40%;
+}
+
+#line{
+  h2{
+    font-size: 3rem;
+  }
+}
+
+#News{
+  img{
+    width: 20rem;
+  }
+}
+
+
+#line{
+
+  height:5vh !important;
+  margin: 2%;
+
+  img{
+    margin: auto;
+  }
+  .Card.Title{
+    font-size: 0.50rem;
+  }
+
+  .card-title{
+    font-size: 1.3dvh;
+    overflow-wrap: normal;
+    display: flex;
+    justify-content: center;
+    margin: 1%;
+  }
+
+}
+
+
+   }
+
+  @media (max-width: 480px) { 
+    .container {
+          margin: auto;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          flex-direction: column;
+        }
+
+    #mainImage{
+      max-width: 8rem;
+      max-height: 4rem;
+    }    
+
+    .table{
+      width: 40%;
+    }
+  
+    #News{
+      img{
+        width: 20rem;
+      }
+    }
+
+
+    #line{
+      height:20vh !important;
+      margin: 2%;
+
+      img{
+        margin: auto;
+      }
+      .Card.Title{
+        font-size: 0.50rem;
+      }
+
+      .card-title{
+        font-size: 1.3dvh;
+        overflow-wrap: normal;
+        display: flex;
+        justify-content: center;
+        margin: 1%;
+      }
+
+    }
+
+
+  }
+
+  @media screen and (min-width: 1224px) {
+
+    #astec {
+
+      height: 30vh;
+      font-size: 1.7dvh;
+      border: 0cap;
+      width: 40dvh;
+      display: flex;
+      flex-wrap: nowrap !important; 
+
+  }
+
+  }
+
+//   @media screen and (max-width: 768px) {
+//     .container {
+//       margin: auto;
+//       display: flex;
+//       justify-content: center;
+//     }
+
+
+
+// #mainImage{
+//   max-width: 10rem;
+//   max-height: 8rem;
+// }    
+
+.table{
+  width: 40%;
+ }
+
+// #News{
+//   img{
+//     width: 20rem;
+//   }
+// }
+
+//   img{
+//     margin: auto;
+//   }
+ 
+// }
+
+
+  @media (max-width: 1270px) { 
+
+    .container{
+      font-size: medium;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #line-products{
+      flex-direction: row;
+    }
+
+    #Contact{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+    #mainImage{
+      max-width: 15rem;
+      max-height: 10rem;
+      display: flex;
+      justify-content: center;
+
+    }    
+
+    .table{
+      width: 40%;
+    }
+  
+    #News{
+      img{
+        width: 35rem;
+      }
+    }
+    
+
+    #line{
+      column-width: auto;
+      height: 25dvh;
+      margin: 2%;
+   ;
+
+      img{
+        margin: auto;
+      }
+      .card-title{
+        font-size: 1.7dvh;
+        overflow-wrap: normal;
+        display: flex;
+        justify-content: center;
+        margin: 1%;
+      }
+    }
+
+
+  
+  @media (max-width: 1920px) { 
+
+    #mainImage{
+      max-width: 15rem;
+      max-height: 10rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    #line{
+      height: 25vh;
+      margin: 2%;
+
+      img{
+        margin: auto;
+      }
+      .card-title{
+        overflow-wrap: normal;
+        display: flex;
+        justify-content: center;
+        margin: 1%;
+      }
+    }
+  }
+
+    .Tabs{
+
+      width: 20%;
+      font-size:medium;
+
+    }
+
+  }
+
+
+   {/* <ul class="list-inline items">
+    <li class="list-inline-item items-list">
+      <div class="px-4">
+        <h5 class="pt-2">Event One</h5>
+        <p class="text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, error qui ratione distinctio nemo, unde obcaecati laborum nobis autem laudantium ipsam optio officia magni? Fugiat, voluptatibus. Sit veniam dolorum perferendis?</p>
+      </div>
+    </li>
+    <li class="list-inline-item items-list">
+      <div class="px-4">
+        <h5 class="pt-2">Event Two</h5>
+        <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus ea delectus, hic voluptatem optio sit alias eligendi at commodi vero. Voluptatum, delectus rerum minima iste earum sunt suscipit laboriosam mollitia?
+        </p>
+      </div>
+    </li>
+    <li class="list-inline-item items-list">
+      <div class="px-4">
+        <h5 class="pt-2">Event Three</h5>
+        <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nulla fuga sint nesciunt. Sequi beatae quod aspernatur. Repudiandae, amet. Maiores temporibus expedita accusantium vero? Asperiores deleniti consectetur quod velit nulla?</p>
+      </div>
+    </li>
+  </ul> */}
