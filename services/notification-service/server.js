@@ -37,7 +37,6 @@ app.use(express.json()); // For parsing JSON request bodies
 // RabbitMQ connection details
 const {
   RABBITMQ_URL,
-  RABBITMQ_PORT,
   NOTIFICATION_QUEUE: RABBITMQ_QUEUE,
   SMTP_SERVER,
   SMTP_PORT,
@@ -74,6 +73,8 @@ const consumeQueue = async () => {
         if (msg !== null) {
           try {
             const order = JSON.parse(msg.content.toString());
+
+            console.log(order);
 
             var mailOptions;
             if (order.type === "new-order") {
@@ -171,11 +172,6 @@ const consumeQueue = async () => {
     console.error("Error connecting to RabbitMQ:", err);
   }
 };
-
-// Basic route
-app.get("/", (req, res) => {
-  res.send("Hello, Express e!");
-});
 
 app.listen(PORT, () => {
   console.log("Notification service is running on port", PORT);

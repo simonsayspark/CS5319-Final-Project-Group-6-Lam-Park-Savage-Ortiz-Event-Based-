@@ -1,6 +1,7 @@
 import express from "express";
 import userModel from "../models/users.js";
 import { orderModel } from "../models/orders.js";
+import { productModel } from "../models/products.js";
 import getRabbitMQConnection from "../rabbitmq.js";
 
 const router = express.Router();
@@ -37,24 +38,29 @@ router.post("/api/orders/place", async (req, res) => {
     await channel.assertQueue(INVENTORY_QUEUE, { durable: true });
 
     // Send a message to the notification queue
-    channel.sendToQueue(
-      NOTIFICATION_QUEUE,
-      Buffer.from(
-        JSON.stringify({
-          type: "new-order",
-          toEmail: user.email,
-          subject: "Order Confirmation",
-          name: user.name,
-          id: newOrder._id,
-          orderDate: newOrder.createdAt,
-          totalAmount: newOrder.totalAmount,
-          items: cartItems.map((item) => ({
-            _id: item.productId,
-            name: item.name,
-            price: item.price,
-          })),
+    const notification_payload = {
+      type: "new-order",
+      toEmail: user.email,
+      subject: "Order Confirmation",
+      name: user.username,
+      _id: newOrder._id,
+      orderDate: newOrder.createdAt,
+      totalAmount: newOrder.totalAmount,
+      items: await Promise.all(
+        cartItems.map(async (item) => {
+          const product = await productModel.findById(item.productId);
+
+          return {
+            _id: product._id.toString(),
+            name: product.name,
+            price: product.price,
+          };
         })
       ),
+    };
+    channel.sendToQueue(
+      NOTIFICATION_QUEUE,
+      Buffer.from(JSON.stringify(notification_payload)),
       {
         persistent: true,
       }
