@@ -73,35 +73,26 @@ export default function LandingPage() {
     <div>
       <NewNav navData={navData} />
       <Carousel
-        className="justify-content-center mt-5 mb-5 w-100"
+        className="justify-content-center mb-5 w-100"
         style={{ maxHeight: "" }}
       >
-        <Carousel.Item className="justify-content-center mt-5 w-100">
-          <Col className="mb-4 mt-5" style={{ maxHeight: "800px" }}>
+        <Carousel.Item className="justify-content-center w-100">
+          <Col className="mb-4" style={{ maxHeight: "800px" }}>
             <img src="homepage2.jpg" width={"100%"} alt="" />
           </Col>
         </Carousel.Item>
-        <Carousel.Item className="justify-content-center mt-5 w-100">
-          <Col
-            className="mb-4 mt-5"
-            style={{ maxHeight: "800px", width: "100%" }}
-          >
+        <Carousel.Item className="justify-content-center w-100">
+          <Col className="mb-4" style={{ maxHeight: "800px", width: "100%" }}>
             <img src="homepage1.jpg" width={"100%"} alt="" />
           </Col>
         </Carousel.Item>
-        <Carousel.Item className="justify-content-center mt-5 w-100">
-          <Col
-            className="mb-4 mt-5"
-            style={{ maxHeight: "800px", width: "100%" }}
-          >
+        <Carousel.Item className="justify-content-center w-100">
+          <Col className="mb-4" style={{ maxHeight: "800px", width: "100%" }}>
             <img src="homepage3.jpg" width={"100%"} alt="" />
           </Col>
         </Carousel.Item>
-        <Carousel.Item className="justify-content-center mt-5 w-100">
-          <Col
-            className="mb-4 mt-5"
-            style={{ maxHeight: "800px", width: "100%" }}
-          >
+        <Carousel.Item className="justify-content-center w-100">
+          <Col className="mb-4" style={{ maxHeight: "800px", width: "100%" }}>
             <img src="homepage4.jpg" width={"100%"} alt="" />
           </Col>
         </Carousel.Item>
@@ -154,8 +145,6 @@ export default function LandingPage() {
           ))}
         </Carousel>
       </Container>
-
-     
 
       <FooterComponent />
     </div>

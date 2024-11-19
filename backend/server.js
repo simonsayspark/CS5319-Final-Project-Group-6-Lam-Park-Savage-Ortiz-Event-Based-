@@ -30,7 +30,7 @@ mongoose
   .then(() => {
     console.log("Database connected succesfull");
     app.listen(PORT, () => {
-      console.log("Server started on port 8000");
+      console.log("Server started on port " + PORT);
     });
   })
   .catch((error) => console.log(error));
@@ -67,9 +67,11 @@ app.post("/api/register", async (req, res) => {
 app.post("/api/login", async (req, res) => {
   const { email, password } = req.body;
 
+  console.log(email, password);
   // Find user by email
   const user = await userModel.findOne({ email });
   if (!user) {
+    console.log("User not found");
     return res.status(401).json({ error: "Invalid email or password" });
   }
 

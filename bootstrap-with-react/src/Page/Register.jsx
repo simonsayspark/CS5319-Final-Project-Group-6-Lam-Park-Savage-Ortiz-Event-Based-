@@ -12,13 +12,11 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check if passwords match
     if (password !== confirmPassword) {
       setError("Passwords do not match. Please try again.");
       return;
     }
 
-    // Clear error state if passwords match
     setError("");
 
     try {
@@ -42,75 +40,103 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <div className="w-full max-w-sm p-8 border rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
+    <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
+      <div
+        className="card shadow-lg p-4"
+        style={{ maxWidth: "450px", width: "100%" }}
+      >
+        <h2 className="text-center fw-bold mb-3 text-primary">
+          Create an Account
+        </h2>
+        <p className="text-center text-muted mb-4">
+          Join us and start managing your projects effectively.
+        </p>
 
-        {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
+        {error && (
+          <div className="alert alert-danger text-center" role="alert">
+            {error}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit}>
           {/* Username Input */}
-          <div className="mb-4">
-            <label className="block mb-2 font-semibold">Username:</label>
+          <div className="mb-3">
+            <label htmlFor="username" className="form-label fw-semibold">
+              Username
+            </label>
             <input
               type="text"
+              id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full p-2 border rounded"
+              className="form-control"
               placeholder="Enter your username"
+              required
             />
           </div>
 
           {/* Email Input */}
-          <div className="mb-4">
-            <label className="block mb-2 font-semibold">Email:</label>
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label fw-semibold">
+              Email Address
+            </label>
             <input
               type="email"
+              id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-2 border rounded"
+              className="form-control"
               placeholder="Enter your email"
+              required
             />
           </div>
 
           {/* Password Input */}
-          <div className="mb-4">
-            <label className="block mb-2 font-semibold">Password:</label>
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label fw-semibold">
+              Password
+            </label>
             <input
               type="password"
+              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-2 border rounded"
+              className="form-control"
               placeholder="Enter your password"
+              required
             />
           </div>
 
           {/* Confirm Password Input */}
-          <div className="mb-6">
-            <label className="block mb-2 font-semibold">
-              Confirm Password:
+          <div className="mb-4">
+            <label htmlFor="confirmPassword" className="form-label fw-semibold">
+              Confirm Password
             </label>
             <input
               type="password"
+              id="confirmPassword"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full p-2 border rounded"
+              className="form-control"
               placeholder="Confirm your password"
+              required
             />
           </div>
 
           {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full py-2 bg-green-600 text-white rounded hover:bg-green-700"
-          >
-            Register
-          </button>
+          <div className="d-grid">
+            <button type="submit" className="btn btn-primary btn-lg">
+              Register
+            </button>
+          </div>
         </form>
 
-        <p className="mt-4 text-center">
+        <p className="text-center mt-4 text-muted">
           Already have an account?{" "}
-          <a href="/login" className="text-blue-600 hover:underline">
+          <a
+            href="/login"
+            className="text-primary fw-bold text-decoration-none"
+          >
             Log In
           </a>
         </p>

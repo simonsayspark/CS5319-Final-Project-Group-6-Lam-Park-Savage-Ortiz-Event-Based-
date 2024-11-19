@@ -24,7 +24,6 @@ const LoginPage = () => {
       if (res.ok) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("userId", data.userId);
-        // alert("Login successful");
         navigate("/");
       } else {
         setError(data.error || "Login failed. Please try again.");
@@ -35,78 +34,78 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-100 to-blue-200">
-      <div className="bg-white rounded-2xl shadow-lg p-8 w-full max-w-sm">
-        {/* Icon */}
-        <div className="flex justify-center mb-6">
-          <div className="bg-blue-100 p-4 rounded-full">
-            <FiMail className="text-blue-600 text-3xl" />
-          </div>
-        </div>
-
+    <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
+      <div className="card shadow-sm p-4" style={{ maxWidth: "400px", width: "100%" }}>
         {/* Title and Subtitle */}
-        <h2 className="text-center text-2xl font-bold mb-2">
-          Sign in with email
-        </h2>
-        <p className="text-center text-gray-600 mb-6">
-          Make a new doc to bring your words, data, and teams together. For
-          free.
+        <h2 className="text-center fw-bold mb-3 text-primary">Welcome Back</h2>
+        <p className="text-center text-secondary mb-4">
+          Sign in to continue creating, collaborating, and organizing with ease.
         </p>
 
-        {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
+        {error && (
+          <div className="alert alert-danger text-center" role="alert">
+            {error}
+          </div>
+        )}
 
         {/* Login Form */}
-        <form
-          onSubmit={handleSubmit}
-          className="space-y-4 flex flex-col items-center"
-        >
+        <form onSubmit={handleSubmit}>
           {/* Email Input */}
-          <div className="relative w-full max-w-xs mx-auto">
-            <FiMail className="absolute left-3 top-3 text-gray-400" />
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full pl-10 p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-              placeholder="Email"
-            />
+          <div className="mb-3">
+            <div className="input-group">
+              <span className="input-group-text bg-white text-muted">
+                <FiMail />
+              </span>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="form-control"
+                placeholder="Email"
+                required
+              />
+            </div>
           </div>
 
           {/* Password Input */}
-          <div className="relative w-full max-w-xs mx-auto">
-            <FiLock className="absolute left-3 top-3 text-gray-400" />
-            <input
-              type={showPassword ? "text" : "password"}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full pl-10 p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-              placeholder="Password"
-            />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-3 text-gray-400"
-            >
-              {showPassword ? <FiEyeOff /> : <FiEye />}
-            </button>
+          <div className="mb-3">
+            <div className="input-group">
+              <span className="input-group-text bg-white text-muted">
+                <FiLock />
+              </span>
+              <input
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="form-control"
+                placeholder="Password"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="btn btn-outline-secondary"
+              >
+                {showPassword ? <FiEyeOff /> : <FiEye />}
+              </button>
+            </div>
           </div>
 
           {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full py-3 bg-black text-white rounded-lg hover:bg-gray-800"
-          >
-            Login
-          </button>
+          <div className="d-grid">
+            <button type="submit" className="btn btn-primary btn-lg">
+              Sign In
+            </button>
+          </div>
         </form>
 
         {/* Register Link */}
-        <p className="text-center mt-6">
-          Don't have an account?{" "}
-          <a href="/register" className="text-blue-600 hover:underline">
+        <div className="text-center mt-4">
+          <span className="text-muted">Don't have an account? </span>
+          <a href="/register" className="text-primary fw-bold text-decoration-none">
             Register
           </a>
-        </p>
+        </div>
       </div>
     </div>
   );
