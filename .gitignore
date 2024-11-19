@@ -1,0 +1,4 @@
+.env
+.env.example
+/services/inventory-service/node_modules/
+/services/notification-service/node_modules/

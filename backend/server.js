@@ -11,9 +11,9 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 const app = express();
-dotenv.config();
+dotenv.config({ path: "../.env" });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.BACKEND_PORT;
 const MGDB_URL = process.env.MONGODB_URL;
 
 const JWT_SECRET = "softwarearchitecturehelloworld";

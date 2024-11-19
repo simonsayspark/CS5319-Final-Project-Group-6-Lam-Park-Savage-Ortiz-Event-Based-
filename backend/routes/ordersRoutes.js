@@ -1,8 +1,11 @@
 import express from "express";
 import userModel from "../models/users.js";
 import { orderModel } from "../models/orders.js";
+import getRabbitMQConnection from "../rabbitmq.js";
 
 const router = express.Router();
+
+const { NOTIFICATION_QUEUE, INVENTORY_QUEUE } = process.env;
 
 router.post("/api/orders/place", async (req, res) => {
   const { userId, cartItems, totalAmount } = req.body;
@@ -27,6 +30,49 @@ router.post("/api/orders/place", async (req, res) => {
     // Update user's orders list with the new order ID
     user.orders.push(newOrder._id);
     await user.save();
+
+    const connection = await getRabbitMQConnection();
+    const channel = await connection.createChannel();
+    await channel.assertQueue(NOTIFICATION_QUEUE, { durable: true });
+    await channel.assertQueue(INVENTORY_QUEUE, { durable: true });
+
+    // Send a message to the notification queue
+    channel.sendToQueue(
+      NOTIFICATION_QUEUE,
+      Buffer.from(
+        JSON.stringify({
+          type: "new-order",
+          toEmail: user.email,
+          subject: "Order Confirmation",
+          name: user.name,
+          id: newOrder._id,
+          orderDate: newOrder.createdAt,
+          totalAmount: newOrder.totalAmount,
+          items: cartItems.map((item) => ({
+            _id: item.productId,
+            name: item.name,
+            price: item.price,
+          })),
+        })
+      ),
+      {
+        persistent: true,
+      }
+    );
+    cartItems.forEach(async (item) => {
+      await channel.sendToQueue(
+        INVENTORY_QUEUE,
+        Buffer.from(
+          JSON.stringify({
+            productId: item.productId,
+            quantityChange: -1,
+          })
+        ),
+        {
+          persistent: true,
+        }
+      );
+    });
 
     res.json({ message: "Order placed successfully", orderId: newOrder._id });
   } catch (error) {
