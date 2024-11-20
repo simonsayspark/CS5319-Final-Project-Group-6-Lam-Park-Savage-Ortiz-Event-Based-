@@ -177,3 +177,30 @@ Or:
 yarn run dev
 ```
 ![alt text](image.png)
+
+
+### Frontend Setup (React)
+Navigate to the React directory:
+```
+cd bootstrap-with-react
+```
+Install dependencies:
+```
+npm install
+```
+Or:
+```
+yarn install
+```
+Start the React app:
+```
+npm start
+```
+Or:
+```
+yarn start
+```
+
+Link for Presentation Video
+https://youtu.be/cUT2wHULXlg 
+
